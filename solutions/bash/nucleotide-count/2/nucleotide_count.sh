@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 
 INPUT="$1"
-[[ -n $(tr -d 'ACGT' <<<"$1") ]] &&
+[[ "$INPUT" =~ [^ATGC] ]] &&
     echo "Invalid nucleotide in strand" &&
     exit 1
     
